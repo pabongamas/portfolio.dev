@@ -1,34 +1,67 @@
-
 ---
-import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE=[  
-    {
-    date:'Actualmente',
-    title:'Application UI code in Tailwind CSS',
-    description:'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages',
-    link:"#"
-   },
-   {
-    date:'February 2023',
-    title:'Application UI code in Tailwind CSS',
-    description:'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages',
-    link:"#"
-   },
-   {
-    date:'February 2022',
-    title:'Application UI code in Tailwind CSS',
-    description:'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages',
-   } 
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Enero 2022 - Actualmente",
+    title: "Ingeniero Lider de desarrollo de software",
+    info: [
+      {
+        descripctionText:
+          "Co-lideré un equipo de tres ingenieros en el desarrollo del sistema SICCES para las Unidades Tecnológicas de Santander.",
+      },
+    ],
+    link:null,
+  },
+  {
+    date: "Agosto 2022 - Diciembre 2022",
+    title: "Desarrollador de software",
+    info: [
+      {
+        descripctionText:
+          "Co-lideré un equipo de tres ingenieros en el desarrollo del sistema SICCES para las Unidades Tecnológicas de Santander.",
+      },
+      {
+        descripctionText:
+          "Aplicando un enfoque full stack, me especialicé en la implementación de tecnologías clave como el Framework Laravel y Livewire de PHP.\
+            Esto resultó en el desarrollo de una plataforma altamente eficiente diseñada para gestionar de manera efectiva los procesos de autoevaluación.",
+      },
+      {
+        descripctionText:
+          "Desempeñé un papel fundamental en el diseño de la arquitectura, utilizando el framework Tailwind CSS para asegurar un diseño moderno y adaptable.\
+           Además, lideré la coordinación de tareas y plazos, garantizando una ejecución sin contratiempos y la entrega puntual del proyecto.",
+      },
+    ],
+    link: null,
+  },
+  {
+    date: "Noviembre 2019 - Diciembre 2021",
+    title: "Desarrollador de software",
+    info: [
+      {
+        descripctionText:
+          "Desarrollé aplicaciones web full stack, empleando tecnologías esenciales como PHP, Java, HTML, CSS y JavaScript. Mi enfoque se centró en la creación de opciones\
+           innovadoras para mejorar la funcionalidad y la experiencia del usuario en cada aplicación.",
+      },
+      {
+        descripctionText:
+          "Manejo de servicios web SOAP y API REST .Desarrollo y modelado con base de datos relacional, utilizando el motor PostgreSQL (SQL Nativo) \
+          y con Laravel con el ORM ELOQUENT (Active Record) ",
+      },
+      {
+        descripctionText:
+          "Uso de Linux para la gestión de conexiones a Servidores mediante la terminal usando OpenSuse,CentOS y Ubuntu.",
+      },
+    ],
+  },
 ];
 ---
 
-<ol class="relative border-s border-gray-200 ml-3">                  
-    {
-        EXPERIENCIE.map((experiencie) => (
-        <li class="mb-10 ms-4">
-            <ExperienceItem { ...experiencie}/>   
-        </li>
-        ))
-      }
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
 </ol>
-
