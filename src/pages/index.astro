@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedinIcon from "../components/icons/linkedin.astro";
+import GithubIcon from "../components/icons/github.astro";
+import GmailIcon from "../components/icons/gmail.astro";
+import BriefCase from "../components/icons/BriefCase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout
+  description="Desarrollador Web FullStack"
+  title="Portafolio Jhon pabon -Desarrollador Web FullStack "
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <img
+        class="rounded-full w-12 h-12"
+        src="https://avatars.githubusercontent.com/u/72658365?v=4"
+        alt="Jhon pabon photo"
+      />
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex 
+	  flex-row gap-x-4 pb-6 lg:pb-10">
+        Hey, Soy Jhon Pabon
+        <a
+          href="https://www.linkedin.com/in/jhon-pabon-9baa30197/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl  text-wrap max-w-[700px]">
+        <span>+5 años de experiencia.</span>
+        <span class="text-green-200/90 opacity-80">Ingeniero de sistemas</span>
+        Especializado en el Desarrollo Web FullStack, Lider de Desarrollo <span
+          class="text-green-100/90 flex gap-1"
+          >De Bucaramanga, Colombia
+          <svg
+            class="w-8"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 36 36"
+            ><path
+              fill="#FBD116"
+              d="M32 5H4C1.791 5 0 6.791 0 9v9h36V9c0-2.209-1.791-4-4-4z"
+            ></path><path fill="#22408C" d="M0 18h36v7H0z"></path><path
+              fill="#CE2028"
+              d="M0 27c0 2.209 1.791 4 4 4h28c2.209 0 4-1.791 4-4v-2H0v2z"
+            ></path></svg
+          ></span
+        >
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/jhon-pabon-9baa30197/">
+          <LinkedinIcon class="size-4 md:size-6" />
+          Linkedin
+        </SocialPill>
+        <SocialPill href="https://github.com/pabongamas">
+          <GithubIcon class="size-4 md:size-6" />
+          Github
+        </SocialPill>
+        <SocialPill href="mailto:pabongamas@gmail.com">
+          <GmailIcon class="size-4 md:size-6" />
+          pabongamas@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+  </main>
+  <SectionContainer id="experiencie">
+    <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <BriefCase class="size-7" />
+      Experiencia Laboral
+    </h2>
+    <Experience />
+  </SectionContainer>
+  <SectionContainer id="projects">
+    <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <CodeIcon class="size-7" />
+      Proyectos
+    </h2>
+    <Projects />
+  </SectionContainer>
+</Layout>
+
+<style></style>
