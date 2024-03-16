@@ -6,12 +6,12 @@ const TAGS = {
   ANGULAR: {
     name: "Angular",
     class: "bg-white text-red-700",
-    icon: angularIcon
+    icon: angularIcon,
   },
   TAILWIND: {
     name: "Tailwind CSS",
     class: "bg-[#003159] text-white",
-    icon:tailwindIcon
+    icon: tailwindIcon,
   },
 };
 const PROJECTS = [
@@ -22,31 +22,56 @@ const PROJECTS = [
     link: "https://master--cool-meerkat-d305de.netlify.app/newRealeses",
     github: "https://github.com/pabongamas/SpotifyApiAngular",
     image: "/projects/SpotifyWebApi.webp",
-    tags: [TAGS.ANGULAR,TAGS.TAILWIND],
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND],
+  },
+  {
+    title: "SpotifyWeb API",
+    description:
+      "Proyecto web Angular que se conecta a Spotify mediante sus API REST, ofreciendo una experiencia centrada en la exploración de canciones, álbumes y listas de reproducción. Interfaz intuitiva para descubrir y disfrutar de la música, con énfasis en la integración de endpoints precisos de Spotify",
+    link: "https://master--cool-meerkat-d305de.netlify.app/newRealeses",
+    github: "https://github.com/pabongamas/SpotifyApiAngular",
+    image: "/projects/SpotifyWebApi.webp",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND],
   },
 ];
 ---
 
-{
-  PROJECTS.map(({ title, description, tags, image }) => (
-    <article>
-      <h3 class="text-2xl font-semibold bg-red text-green-200/90 mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
-        {tags.map((tag) => (
-          <li>
-            <span class={`flex  gap-x-2 rounded-full text-xs ${tag.class} py-2 px-2`}>
-            <tag.icon class="size-4"/>
-            {tag.name}
-            </span>
-            </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
-    </article>
-  ))
-}
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ title, description, tags, image }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 ">
+        <div class="w-full md:w-1/2 flex justify-center items-center">
+          <img
+            class="rounded shadow-2xl shadow-white/10"
+            src={image}
+            alt={`Captura de pantalla del proyecto ${image}`}
+          />
+        </div>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold bg-red text-green-200/90 mb-2">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex gap-x-2 flex-row mb-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex  gap-x-2 rounded-full text-xs ${tag.class} py-2 px-2`}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="mt-2 text-justify">
+           {description}
+          </div>
+          <footer>
+            </footer>
+        </div>
+      </article>
+    ))
+  }
+  </div

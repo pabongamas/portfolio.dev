@@ -7,7 +7,23 @@ const EXPERIENCIE = [
     info: [
       {
         descripctionText:
-          "Co-lideré un equipo de tres ingenieros en el desarrollo del sistema SICCES para las Unidades Tecnológicas de Santander.",
+          "Lideré un equipo de desarrollo de software, supervisando nuevos proyectos y asignando tareas al equipo.",
+      },
+      {
+        descripctionText:
+          "Revisé y garantice la calidad de los desarrollos en ambientes de desarrollo y QA.",
+      },
+      {
+        descripctionText:
+          "Solucioné bugs y problemas de software reportados en tickets por el área de soporte técnico",
+      },
+      {
+        descripctionText:
+          "Participé activamente en el diseño y modelado de la arquitectura de software (Bases de datos , modelo de negocio)",
+      },
+      {
+        descripctionText:
+          "Desarrollé microservicios utilizando tecnologías como Spring Java y ASP .NET Core para implementar funcionalidades especiales y mejorar la escalabilidad y el rendimiento del software.",
       },
     ],
     link:null,
@@ -59,7 +75,7 @@ const EXPERIENCIE = [
 <ol class="relative border-s border-gray-200 ml-3">
   {
     EXPERIENCIE.map((experiencie) => (
-      <li class="mb-10 ms-4">
+      <li class="mb-10 ms-4 text-pretty">
         <ExperienceItem {...experiencie} />
       </li>
     ))
