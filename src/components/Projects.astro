@@ -1,6 +1,16 @@
 ---
 import angularIcon from "../components/icons/AngularIcon.astro";
 import tailwindIcon from "../components/icons/TailwindIcon.astro";
+import GithubProjectsIcon from "../components/icons/GithubProjectsIcon.astro";
+import LinkIcon from "../components/icons/LinkIcon.astro";
+import TypeScriptIcon from "../components/icons/TypeScriptIcon.astro";
+import ExpressJsIcon from "../components/icons/ExpressJsIcon.astro";
+import JSIcon from "../components/icons/JavaScriptIcon.astro";
+import SequelizeIcon from "../components/icons/Sequelize.astro";
+
+
+
+
 
 const TAGS = {
   ANGULAR: {
@@ -13,16 +23,48 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: tailwindIcon,
   },
+  TYPESCRIPT:{
+    name: "TypeScript",
+    class: "bg-white text-blue-500",
+    icon: TypeScriptIcon,
+  },
+  EXPRESS:{
+    name: "Express.JS",
+    class: "bg-slate-700 text-white",
+    icon: ExpressJsIcon,
+  },
+  JS:{
+    name: "JavaScript",
+    class: "bg-white text-black",
+    icon: JSIcon,
+  },
+  SEQUELIZE:{
+    name: "Sequelize",
+    class: "bg-white text-blue-500",
+    icon: SequelizeIcon,
+  }
 };
 const PROJECTS = [
   {
-    title: "SpotifyWeb API",
+    title: "Business Admin (Frontend)",
     description:
-      "Proyecto web Angular que se conecta a Spotify mediante sus API REST, ofreciendo una experiencia centrada en la exploración de canciones, álbumes y listas de reproducción. Interfaz intuitiva para descubrir y disfrutar de la música, con énfasis en la integración de endpoints precisos de Spotify",
-    link: "https://master--cool-meerkat-d305de.netlify.app/newRealeses",
+      "Una aplicación Angular 17 que ofrece una experiencia de administración intuitiva para usuarios y roles en un contexto empresarial.\
+       Utiliza módulos, componentes y enrutamiento, con seguridad reforzada mediante guardias para autenticación y roles, y interceptores para tokens JWT.\
+        Actualmente en desarrollo, destinado a gestionar clientes, categorías y productos.",
     github: "https://github.com/pabongamas/SpotifyApiAngular",
     image: "/projects/SpotifyWebApi.webp",
-    tags: [TAGS.ANGULAR, TAGS.TAILWIND],
+    tags: [TAGS.ANGULAR,TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
+  {
+    title: "Business Admin (Backend)",
+    description:
+      "Un backend Node.js con Express que proporciona una sólida base de funcionalidad para la aplicación.\
+       Utiliza el modelo de controlador y servicio, junto con la capa de persistencia, manejando la autenticación mediante tokens JWT y PostgreSQL\
+        como base de datos con el ORM Sequelize. Es el complemento integral del frontend, brindando soporte para la gestión de usuarios, roles, clientes,\
+         categorías y productos en un entorno empresarial.",
+    github: "https://github.com/pabongamas/SpotifyApiAngular",
+    image: "/projects/SpotifyWebApi.webp",
+    tags: [TAGS.JS, TAGS.EXPRESS,TAGS.SEQUELIZE],
   },
   {
     title: "SpotifyWeb API",
@@ -38,8 +80,8 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ title, description, tags, image }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 ">
+    PROJECTS.map(({ title, description, tags, image, github, link }) => (
+      <article class="flex flex-col space-x-0 space-y-8  group md:flex-row md:space-x-8 md:space-y-0 ">
         <div class="w-full md:w-1/2 flex justify-center items-center">
           <img
             class="rounded shadow-2xl shadow-white/10"
@@ -48,7 +90,7 @@ const PROJECTS = [
           />
         </div>
         <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold bg-red text-green-200/90 mb-2">
+          <h3 class="text-2xl font-bold bg-red text-green-200/90 mb-2 ">
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
@@ -65,13 +107,38 @@ const PROJECTS = [
               ))}
             </ul>
           </div>
-          <div class="mt-2 text-justify">
-           {description}
+          <div class="mt-2 text-justify">{description}</div>
+          <div class="flex flex-row gap-2">
+            {github && (
+              <div class="mt-2 text-justify">
+                <a
+                  href={github}
+                  target="_blank"
+                  class="inline-flex items-center px-4 py-2 gap-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                >
+                  <GithubProjectsIcon class="size-4 md:size-6" />
+                  Code
+                </a>
+              </div>
+            )}
+            {link && (
+              <div class="mt-2 text-justify">
+                <a
+                  href={link}
+                  target="_blank"
+                  class="inline-flex items-center px-4 py-2 gap-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                >
+                  <LinkIcon class="size-4 md:size-6" />
+                  Preview
+                </a>
+              </div>
+            )}
           </div>
-          <footer>
-            </footer>
+
+          <footer />
         </div>
       </article>
     ))
   }
   </div
+</div>
