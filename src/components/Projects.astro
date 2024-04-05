@@ -7,6 +7,9 @@ import TypeScriptIcon from "../components/icons/TypeScriptIcon.astro";
 import ExpressJsIcon from "../components/icons/ExpressJsIcon.astro";
 import JSIcon from "../components/icons/JavaScriptIcon.astro";
 import SequelizeIcon from "../components/icons/Sequelize.astro";
+import javaIcon from "../components/icons/JavaIcon.astro";
+import SpringIcon from "../components/icons/SpringFramework.astro";
+import Postgresql from "../components/icons/Postgresql.astro";
 
 
 
@@ -42,9 +45,34 @@ const TAGS = {
     name: "Sequelize",
     class: "bg-white text-blue-500",
     icon: SequelizeIcon,
+  },
+  JAVA:{
+    name:"Java",
+    class: "bg-white text-blue-500",
+    icon:javaIcon
+  },
+  SPRING:{
+    name:"Spring",
+    class:"bg-white text-green-500",
+    icon:SpringIcon
+  },
+  POSTGRESQL:{
+    name:"PostgresSQL",
+    class:"bg-white text-blue-500",
+    icon:Postgresql
   }
 };
 const PROJECTS = [
+{
+    title: "DataMusic: Plataforma Java/Spring para Gestión de Música",
+    description:
+      "DataMusic es una aplicación Java/Spring que permite la gestión eficiente de datos musicales.\
+       Ofrece un conjunto completo de funcionalidades, incluyendo autenticación segura con JWT,\
+        arquitectura RESTful con controladores y servicios, y paginación para retorno eficiente de datos.",
+    github: "https://github.com/pabongamas/DataMusicSpringJAVA",
+    image: "/projects/BusinessFront.webp",
+    tags: [TAGS.JAVA,TAGS.SPRING, TAGS.POSTGRESQL],
+  },
   {
     title: "Business Admin (Frontend)",
     description:
@@ -52,7 +80,7 @@ const PROJECTS = [
        Utiliza módulos, componentes y enrutamiento, con seguridad reforzada mediante guardias para autenticación y roles, y interceptores para tokens JWT.\
         Actualmente en desarrollo, destinado a gestionar clientes, categorías y productos.",
     github: "https://github.com/pabongamas/BusinessFront",
-    image: "/projects/SpotifyWebApi.webp",
+    image: "/projects/BusinessFront.webp",
     tags: [TAGS.ANGULAR,TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
